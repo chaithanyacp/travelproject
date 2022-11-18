@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <style>
+        .style1{
+         color:white;
+         font-size:25px;
+        }
+    </style>
+</head>
+<body style="background-image:url({% static 'images/bg2.jpg' %})">
+<p style="text-align:center;color:white;font-size:45px;">Welcome to registration page</p>
+<div class="style1">
+    <form action="" method="post">
+    {% csrf_token %}
+        <table style="margin-left: auto;margin-right: auto;padding:120px;">
+            <tr>
+                <td>FirstName :  </td>
+                <td><input type="text" placeholder="Enter your Firstname" name="first_name"></td>
+            </tr>
+            <tr>
+                <td> Name :  </td>
+                <td><input type="text" placeholder="Enter your Lastname" name="last_name"></td>
+            </tr>
+            <tr>
+                <td>Email :  </td>
+                <td><input type="text"  placeholder="Enter Email" name="email"></td>
+            </tr>
+            <tr>
+                <td>Uname :  </td>
+                <td><input type="text"  placeholder="Enter an username" name="username"></td>
+            </tr>
+            <tr>
+                <td>Password : </td>
+                <td><input type="password" placeholder="Enter a password" name="password"></td>
+            </tr>
+            <tr>
+                <td>Confirm Password : </td>
+                <td><input type="password" placeholder="Confirm password" name="cpassword"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align:center;padding:20px;"><input type="submit"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+{% for msg in messages %}
+<i>{{msg}}</i>
+{% endfor %}
+</body>
+</html>
